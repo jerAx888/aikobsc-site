@@ -1,250 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AIKO</title>
 
-<!-- Favicon: small icon shown in browser tab and address bar -->
-<link rel="icon" type="image/png" href="aikoright.png" />
+<link rel="icon" type="image/png" href="aikoright.png">
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    scroll-behavior: smooth;
-  }
 
-  body {
-    background: radial-gradient(circle at top, #2c240a, #000);
-    color: white;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+scroll-behavior:smooth;
+}
 
-  /* NAVBAR */
+body{
+background: radial-gradient(circle at top,#2c240a,#000);
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 60px;
-    position: relative;
-    z-index: 10;
-  }
+/* NAVBAR */
 
-  .logo {
-    font-size: 32px;
-    font-weight: bold;
-    color: #ffd35a;
-  }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 60px;
+position:relative;
+z-index:10;
+}
 
-  .nav-right {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-  }
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#ffd35a;
+}
 
-  .nav-right a {
-    text-decoration: none;
-    padding: 14px 30px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
-    background: #ffd35a;
-    color: black;
-    transition: 0.3s;
-  }
+.nav-right{
+display:flex;
+gap:14px;
+align-items:center;
+}
 
-  .nav-right a:hover {
-    background: #e6c84b;
-  }
+.nav-right a{
+text-decoration:none;
+padding:14px 30px;
+border-radius:6px;
+font-weight:bold;
+font-size:16px;
+background:#ffd35a;
+color:black;
+transition:0.3s;
+}
 
-  /* HERO */
+.nav-right a:hover{
+background:#e6c84b;
+}
 
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px;
-    height: 80vh;
-    position: relative;
-    z-index: 2;
-    gap: 40px;
-  }
+/* HERO */
 
-  /* LEFT SIDE */
+.hero{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px;
+height:80vh;
+position:relative;
+z-index:2;
+gap:40px;
+}
 
-  .left {
-    max-width: 420px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+/* LEFT SIDE */
 
-  .title {
-    font-size: 130px;
-    font-weight: 900;
-    background: linear-gradient(90deg, #ffe99c, #ffbf00);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
+.left{
+max-width:420px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
 
-  .desc {
-    color: #ccc;
-    font-size: 18px;
-    line-height: 1.4;
-  }
+.title{
+font-size:130px;
+font-weight:900;
+background:linear-gradient(90deg,#ffe99c,#ffbf00);
+-webkit-background-clip:text;
+color:transparent;
+}
 
-  .embrace {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #ffd35a;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.3s;
-  }
+.desc{
+color:#ccc;
+font-size:18px;
+line-height:1.4;
+}
 
-  .embrace:hover {
-    background: #e6c84b;
-  }
+.embrace{
+display:inline-block;
+padding:14px 30px;
+background:#ffd35a;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
 
-  /* CONTRACT ADDRESS */
+.embrace:hover{
+background:#e6c84b;
+}
 
-  .contract {
-    font-size: 12px;
-    color: #ffd35a;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.2s;
-  }
+/* CONTRACT ADDRESS */
 
-  .contract:hover {
-    color: #fff;
-    text-shadow: 0 0 8px #ffd35a;
-  }
+.contract{
+font-size:12px;
+color:#ffd35a;
+cursor:pointer;
+user-select:none;
+transition:0.2s;
+}
 
-  #copied {
-    margin-left: 6px;
-    color: #00ff9d;
-    font-size: 11px;
-    display: none;
-  }
+.contract:hover{
+color:#fff;
+text-shadow:0 0 8px #ffd35a;
+}
 
-  /* RIGHT SIDE */
+#copied{
+margin-left:6px;
+color:#00ff9d;
+font-size:11px;
+display:none;
+}
 
-  .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+/* RIGHT SIDE */
 
-  .right img {
-    width: 420px;
-    filter: drop-shadow(0 0 40px rgba(255, 200, 0, 0.4));
-  }
+.right{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
 
-  /* STATUS */
+.right img{
+width:420px;
+filter:drop-shadow(0 0 40px rgba(255,200,0,0.4));
+}
 
-  .status {
-    background: #0f0f0f;
-    padding: 12px 18px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    font-size: 14px;
-    text-align: center;
-  }
+/* STATUS */
 
-  .status span {
-    color: #ffd35a;
-  }
+.status{
+background:#0f0f0f;
+padding:12px 18px;
+border-radius:10px;
+border:1px solid rgba(255,215,0,0.2);
+font-size:14px;
+text-align:center;
+}
 
-  /* BACKGROUND TEXT */
+.status span{
+color:#ffd35a;
+}
 
-  .bg-text {
-    position: absolute;
-    font-size: 420px;
-    font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 215, 0, 0.15);
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    animation: moveText 8s linear infinite;
-    z-index: 0;
-  }
+/* BACKGROUND TEXT */
 
-  @keyframes moveText {
-    0% {
-      transform: translate(-60%, -50%);
-    }
-    50% {
-      transform: translate(-40%, -50%);
-    }
-    100% {
-      transform: translate(-60%, -50%);
-    }
-  }
+.bg-text{
+position:absolute;
+font-size:420px;
+font-weight:900;
+color:transparent;
+-webkit-text-stroke:1px rgba(255,215,0,0.15);
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+white-space:nowrap;
+animation:moveText 8s linear infinite;
+z-index:0;
+}
 
-  /* DEX SECTION */
+@keyframes moveText{
+0%{transform:translate(-60%,-50%)}
+50%{transform:translate(-40%,-50%)}
+100%{transform:translate(-60%,-50%)}
+}
 
-  .dex-section {
-    padding: 40px 20px 80px 20px;
-    background: #111;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
+/* DEX SECTION */
 
-  .dex-section h2 {
-    font-size: 28px;
-    color: #ffd35a;
-    text-shadow: 0 0 15px #ffd35a;
-    margin-bottom: 10px;
-  }
+.dex-section{
+padding:40px 20px 80px 20px;
+background:#111;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
 
-  .dex-section iframe {
-    width: 1200px;
-    height: 700px;
-    border: none;
-    border-radius: 10px;
-  }
+.dex-section h2{
+font-size:28px;
+color:#ffd35a;
+text-shadow:0 0 15px #ffd35a;
+margin-bottom:10px;
+}
 
-  /* MOBILE */
+.dex-section iframe{
+width:1200px;
+height:700px;
+border:none;
+border-radius:10px;
+}
 
-  @media (max-width: 900px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-      height: auto;
-    }
+/* MOBILE */
 
-    .title {
-      font-size: 70px;
-    }
+@media(max-width:900px){
 
-    .right img {
-      width: 320px;
-    }
+.hero{
+flex-direction:column;
+text-align:center;
+height:auto;
+}
 
-    .dex-section iframe {
-      width: 100%;
-      height: 500px;
-    }
+.title{
+font-size:70px;
+}
 
-    .left {
-      max-width: 90%;
-      align-items: center;
-    }
-  }
+.right img{
+width:320px;
+}
+
+.dex-section iframe{
+width:100%;
+height:500px;
+}
+
+.left{
+max-width:90%;
+align-items:center;
+}
+
+}
+
 </style>
 </head>
 
@@ -255,73 +252,90 @@
 <!-- NAVBAR -->
 
 <nav>
-  <div class="logo">AIKO</div>
 
-  <div class="nav-right">
-    <a href="#chart">CHART</a>
-    <a href="https://pump.fun" target="_blank">BUY $AIKO</a>
-    <a href="https://x.com/Aikobscdotxyz" target="_blank">X</a>
-  </div>
+<div class="logo">AIKO</div>
+
+<div class="nav-right">
+<a href="#chart">CHART</a>
+<a href="https://pump.fun" target="_blank">BUY $AIKO</a>
+<a href="https://x.com/Aikobscdotxyz" target="_blank">X</a>
+</div>
+
 </nav>
 
 <!-- HERO -->
 
 <section class="hero">
-  <div class="left">
-    <div class="title">AIKO</div>
 
-    <p class="desc">
-      Your intelligent AI companion powered by ElizaCloud.
-      Experience deep, natural conversations with AIKO — always on, always smart.
-    </p>
+<div class="left">
 
-    <a
-      href="https://www.elizacloud.ai/dashboard/chat?characterId=a71c8a6a-6312-4cb5-8851-b1647245b73b"
-      target="_blank"
-      class="embrace"
-      >START CHATTING</a
-    >
+<div class="title">AIKO</div>
 
-    <div class="contract" onclick="copyCA()">
-      CA: <span id="ca">asdadadadaadadaasda4444</span>
-      <span id="copied">Copied!</span>
-    </div>
-  </div>
+<p class="desc">
+Your intelligent AI companion powered by ElizaCloud.
+Experience deep, natural conversations with AIKO —
+always on, always smart.
+</p>
 
-  <div class="right">
-    <img src="aiko.png" alt="AIKO Image" />
+<a href="https://www.elizacloud.ai/dashboard/chat?characterId=a71c8a6a-6312-4cb5-8851-b1647245b73b"
+target="_blank"
+class="embrace">
+START CHATTING
+</a>
 
-    <div class="status">
-      Agent Status: <span>Online</span><br />
-      Alpha Version 2.1<br />
-      Built On ElizaOS
-    </div>
-  </div>
+<div class="contract" onclick="copyCA()">
+CA: <span id="ca">asdadadadaadadaasda4444</span>
+<span id="copied">Copied!</span>
+</div>
+
+</div>
+
+<div class="right">
+
+<img src="aiko.png" alt="AIKO Image">
+
+<div class="status">
+Agent Status: <span>Online</span><br>
+Alpha Version 2.1<br>
+Built On ElizaOS
+</div>
+
+</div>
+
 </section>
 
 <!-- DEX -->
 
 <section id="chart" class="dex-section">
-  <h2>$AIKO REAL TIME PRICE</h2>
 
-  <iframe
-    src="https://dexscreener.com/solana/hvujow1px34paefc9uwuv7lrh7ta4usoprkztccdwa21?embed=1&theme=dark"
-    scrolling="no"
-  ></iframe>
+<h2>$AIKO REAL TIME PRICE</h2>
+
+<iframe
+src="https://dexscreener.com/solana/hvujow1px34paefc9uwuv7lrh7ta4usoprkztccdwa21?embed=1&theme=dark"
+scrolling="no">
+</iframe>
+
 </section>
 
 <script>
-  function copyCA() {
-    const ca = document.getElementById("ca").innerText;
-    navigator.clipboard.writeText(ca);
-    const copied = document.getElementById("copied");
-    copied.style.display = "inline";
-    setTimeout(function () {
-      copied.style.display = "none";
-    }, 1500);
-  }
+
+function copyCA(){
+
+const ca=document.getElementById("ca").innerText;
+
+navigator.clipboard.writeText(ca);
+
+const copied=document.getElementById("copied");
+
+copied.style.display="inline";
+
+setTimeout(function(){
+copied.style.display="none";
+},1500);
+
+}
+
 </script>
 
 </body>
 </html>
-
